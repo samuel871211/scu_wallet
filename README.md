@@ -46,4 +46,6 @@ pymongo負責跟MondoDB資料庫去做溝通，開始了我的全端開發旅程
 
 # 專案開發日誌
 
+https://github.com/cat1528985/DungWuRenChianBau/blob/main/log.txt
+
 因為我本身就有每天寫日記的習慣，所以我從專案步入正軌之後，就開始每天記錄一些今天的進度、學到的東西
