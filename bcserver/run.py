@@ -19,14 +19,14 @@ socketio = SocketIO(app)
 # sentry_sdk.init(integrations=[FlaskIntegration()])
 
 from imgurpython import ImgurClient
-client_id = 'aa42fe8f65f2697'
-client_secret = '1da9d9552e79345ce83998f68d7646b180c805a8'
-access_token = '484f5da1a86112e2b535eade0314f757a4122b05'
-refresh_token = 'de4cca72d6e2d203087316d744243004498bc0d7'
+client_id = ''
+client_secret = ''
+access_token = ''
+refresh_token = ''
 ImageClient = ImgurClient(client_id, client_secret, access_token, refresh_token)
 
 import pymongo
-client = pymongo.MongoClient("mongodb+srv://shemira:cat2163472@cluster0-quiji.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("")
 
 ########################################
 
