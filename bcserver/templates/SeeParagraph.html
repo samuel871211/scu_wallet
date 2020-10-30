@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+    <title>【{{ClassName}}】{{title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <link type="text/css" rel="stylesheet" href="/static/SeeParagraph/SeeParagraph.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="res" content="{{ res }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body style="display:none">
+    <table id="header">
+        <tr>
+            <td id="FourmIconTd">
+                <i class="fa fa-wechat fa-4x" onclick="Paragraph()"></i>
+            </td>
+            
+            <td id="FourmTd">
+                Fourm
+            </td>
+            
+            <td id="HomeIconTd" align="right">
+                <button onclick="UserCenter()">
+                    <i class="fa fa-home fa-3x"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea">
+        <table id="ParagraphInfo">
+            <tr>
+                <td id="title" colspan="2">【{{ClassName}}】{{title}}</td>
+            </tr>
+            
+            <tr>
+                <td id="AuthorTd">
+                    <div>
+                        <img src="{{AuthorSelfie}}">
+                        <b>{{AuthorUsername}}<br>{{AuthorMajor}}</b>
+                    </div>
+                </td>
+                <td id="time" align="right" style="padding-right:5px">
+                    {{time}}
+                </td>
+            </tr>
+
+            <tr>
+                <td id="paragraph" colspan="2"></td>
+            </tr>
+
+            <tr>
+                <td id="ThreeTd" align="left" colspan="2">
+                    <i class="fa fa-thumbs-up fa-2x fa-fw" onclick="InsertEmotionToParagraph('like')"></i>
+                    <b id="like">{{LikeCount}}</b>
+                    <i class="fa fa-thumbs-down fa-2x fa-fw" onclick="InsertEmotionToParagraph('dislike')"></i>
+                    <b id="dislike">{{DislikeCount}}</b>
+                    <i class="fa fa-comment fa-2x fa-fw" onclick="Scroll()"></i>
+                    <b id="response">{{ResponseCount}}</b>
+                </td>
+            </tr>
+        </table>
+        <table id="AllResponse"></table>
+
+        <table id="NoMore">
+            <tr><td>沒有更多留言了</td></tr>
+        </table>
+
+        <table id="ResponseArea"> 
+            <tr>
+                <td id="MyInfo">
+                    <div>
+                        <img src="{{MySelfie}}">
+                        <div>{{MyUsername}}<br>{{MyMajor}}</div>
+                    </div>
+                </td>
+
+                <td align="right" style="color:#7f8280">
+                    <i class="fa fa-arrows-alt fa-lg fa-fw" onclick="FullScreenEdit()"></i>
+                    <i class="fa fa-send fa-lg fa-fw" onclick="InsertNewResponse()"></i>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" class="hide" onclick="hide(this)" style="display:none">
+                    <i class="fa fa-check-square"></i>
+                    <b>顯示學系</b>
+                </td>
+                <td align="center" class="hide" onclick="hide(this)" style="display:none">
+                    <i class="fa fa-check-square"></i>
+                    <b>顯示頭像</b>
+                </td>
+            <tr>
+            <tr>
+                <td colspan="2" align="center" id="ContentTd">
+                    <textarea id="content" placeholder="留言..."></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="FourActionDiv" style="display:none">
+        <div id="GrayArea" onclick="Close()"></div>
+        <table id="ReplyOrReportTable">
+            <tr>
+                <td align="center">
+                    <button class="important" onclick="report()">
+                        <i class="fa fa-exclamation-circle fa-2x fa-fw"></i>
+                        <b>檢舉</b>
+                    </button>
+                </td>
+                <td align="center">
+                    <button onclick="reply()">
+                        <i class="fa fa-tags fa-2x fa-fw"></i>
+                        <b>回覆</b>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <table id="DeleteOrEditTable">
+            <tr>
+                <td align="center">
+                    <button class="important" onclick="Delete()">
+                        <i class="fa fa-close fa-fw fa-2x"></i>
+                        <b>刪除</b>
+                    </button>
+                </td>
+                <td align="center">
+                    <button onclick="edit()">
+                        <i class="fa fa-pencil fa-fw fa-2x"></i>
+                        <b>編輯</b>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="ReportDiv" style="display:none" align="center">
+        <select onchange="OnchangeReport()">
+            <option value="檢舉原因">檢舉原因</option>
+            <option value="惡意洗版">惡意洗版</option>
+            <option value="重複發文">重複發文</option>
+            <option value="誹謗辱罵">誹謗辱罵</option>
+            <option value="其他原因">其他原因</option>
+        </select>                    
+    </div>
+    <div id="OtherReasonDiv" style="display:none" align="center">
+        <div align="center">
+            <input id="ReportReason" type="text" placeholder="檢舉理由(50字內)">
+            <button onclick="SendReport()">確定</button>
+            <button onclick="Cancel()">取消</button>
+        </div>
+    </div>
+    <script src="/static/SeeParagraph/SeeParagraph.js"></script>
+</body>
+</html>

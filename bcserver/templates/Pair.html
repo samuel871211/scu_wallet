@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>東吳人 - 配對</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/static/pair/pair.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="PairIconTd">
+                <i class="fa fa-venus-mars fa-4x"></i>
+            </td>
+            <td id="PairTd">
+                Pair
+            </td>
+            <td id="HomeIconTd" align="right">
+                <button onclick="UserCenter()"><i class="fa fa-home fa-3x"></i></button>
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea">
+        <div id="JoinArea">
+            <div align="left" id="TextingArea">
+                <div>#想找人聊天，但是又沒機會？</div>
+                <div>#生活壓力大，想訴說心事？</div>
+                <div>#不想再一個人度過孤單的夜晚？</div>
+                <div>#那就快來參與東吳的每日配對吧！</div>
+                <br>
+                <div>報名身分：</div>
+                <div id="TwoChoice">
+                    <div style="float:left;color:#3bb0ff;" align="center" class="hide" onclick="hide(this)">
+                        <i class="fa fa-check-square"></i>
+                        <b>顯示學系</b>
+                    </div>
+                    <div style="float:right;color:#3bb0ff;" align="center" class="hide" onclick="hide(this)">
+                        <i class="fa fa-check-square"></i>
+                        <b>顯示頭像</b>
+                    </div>
+                </div>
+            </div>
+            <table align="center">
+                <tr>
+                    <td id="notice" style="visibility:hidden">
+                        <b>報名中，請稍後</b>
+                        <i class="fa fa-spinner fa-spin fa-pulse"></i>
+                    </td>
+                    <td align="right">
+                        <button onclick="JoinDailyPair()">參與配對</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="StartToChat">
+            <div id="TextingArea2" align="right">
+                <div>#月老每晚7點降臨，為你配對</div>
+                <div>#請保持愉悅的心情，並注意您的禮貌</div>
+            </div>
+            <button onclick="EnterChatRoom()">開始聊</button>
+        </div>
+    </div>
+    <script src="/static/pair/pair.js"></script>
+</body>
+</html>

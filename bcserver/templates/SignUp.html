@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <title>東吳人 - 註冊</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link type="text/css" rel="stylesheet" href="/static/SignUp/SignUp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="/static/SignUp/SignUp.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="SoochowTd">
+                <img src="/static/scubadge-removebg-preview.png" style="width:67px">
+            </td>
+            <td id="SignUpTd">
+                SignUp
+            </td>
+            <td id="BackTd" align="right">
+                <i class="fa fa-mail-reply fa-2x" onclick="Back()"></i>
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea" align="center">
+        <div style="width:100%;height:5%"></div>
+        
+        <div id="title"><b>填寫註冊資料</b></div>
+        
+        <div style="width:100%;height:2%"></div>
+        
+        <input id="username" type="text" placeholder="帳號(6~12英數，區分大小寫)">
+
+        <div style="width:100%;height:2%"></div>
+        
+        <input id="password" type="password" placeholder="密碼(6~20英數，區分大小寫)">
+        
+        <div style="width:100%;height:2%"></div>
+
+        <input id="confirm" type="password" placeholder="再次輸入密碼">
+
+        <div style="width:100%;height:2%"></div>
+        
+        <input id="StudentId" type="text" placeholder="學號">
+        
+        <div style="width:100%;height:2%"></div>
+
+        <input id="Email" type="text" placeholder="學校信箱"><br>
+        
+        <div style="width:200px">
+            <div align="left">
+                <button id="ConfirmEmail" onclick="ConfirmEmail()">驗證</button>
+            </div>
+        </div>
+
+        <div style="width:100%;height:2%"></div>
+
+        <input id="VerificationCode" type="text" placeholder="信箱驗證碼">
+
+        <div style="width:100%;height:2%"></div>
+        
+        <select id="major">
+            <option value="巨資系">巨資系</option>
+            <option value="資管系">資管系</option>
+            <option value="中文系">中文系</option>
+            <option value="英文系">英文系</option>
+            <option value="德文系">德文系</option>
+            <option value="歷史系">歷史系</option>
+            <option value="哲學系">哲學系</option>
+            <option value="政治系">政治系</option>
+            <option value="社會系">社會系</option>
+            <option value="社工系">社工系</option>
+            <option value="音樂系">音樂系</option>
+            <option value="日文系">日文系</option>
+            <option value="數學系">數學系</option>
+            <option value="物理系">物理系</option>
+            <option value="化學系">化學系</option>
+            <option value="微物系">微物系</option>
+            <option value="心理系">心理系</option>
+            <option value="法律系">法律系</option>
+            <option value="經濟系">經濟系</option>
+            <option value="會計系">會計系</option>
+            <option value="企管系">企管系</option>
+            <option value="財精系">財精系</option>       
+        </select>
+        
+        <div style="width:100%;height:2%"></div>
+        
+        <select id="grade">
+            <option value="1">1年級</option>
+            <option value="2">2年級</option>
+            <option value="3">3年級</option>
+            <option value="4">4年級</option>
+            <option value="5">5年級</option>
+            <option value="6">6年級</option>
+            <option value="老師">老師</option>
+        </select>
+        
+        <div style="width:100%;height:2%"></div>
+        
+        <select id="gender">
+            <option value="male">男</option>
+            <option value="female">女</option>
+        </select>
+        
+        <div style="width:100%;height:2%"></div>
+        
+        <button id="NewDID" onclick="NewDID()">註冊</button>
+        
+        <div style="width:100%;height:5%"></div>
+    </div>
+    <div id="Waiting" style="display:none" align="center">
+        <div>
+            <i class="fa fa-spinner fa-spin fa-pulse fa-5x"></i>
+        </div>
+    </div>
+</body>
+</html>

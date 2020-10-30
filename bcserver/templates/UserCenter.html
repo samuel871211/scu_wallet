@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+	<title>東吳人 - 會員中心</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link type="text/css" rel="stylesheet" href="/static/UserCenter/UserCenter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="HomeIconTd">
+                <i class="fa fa-home fa-4x" style="color:white"></i>
+            </td>
+            <td id="HomeTd" style="color:white">
+                Home
+            </td>
+            <td id="SettingTd" align="right">
+                <button><i class="fa fa-cog fa-2x" style="color:white"></i></button>
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea">
+        <table id="PersonalInfo" align="center">
+            <tr>
+                <td id="SelfieTd" align="center">
+                    <div style="display: flex">
+                        <img onclick="ChangeSelfie()" src="{{selfie}}">
+                    </div>
+                    
+                </td>
+                <td id="NameAndBalanceTd">
+                    <b id="username">{{username}}</b><br>
+                    <b id="balance">餘額：{{balance}}</b>
+                </td>
+            </tr>
+        </table>
+        
+        <div id="Buttons" align="center">
+            <button onclick="LogOut()">
+                <i class="fa fa-reply fa-4x fa-fw"></i><br>
+                <b>登出</b>
+            </button>
+            <button onclick="mail()">
+                <i class="fa fa-envelope fa-4x fa-fw"></i><br>
+                <b id="UnreadMailLength">信箱({{Unread_Mail}})</b>
+            </button>
+            <button onclick="MyHouse()">
+                <i class="fa fa-pencil-square fa-4x fa-fw"></i><br>
+                <b>小屋</b>
+            </button>
+            <button onclick="games()">
+                <i class="fa fa-gamepad fa-4x fa-fw"></i><br>
+                <b>遊戲</b>
+            </button>
+            <button onclick="BountyBoard()">
+                <i class="fa fa-gg fa-4x fa-fw"></i><br>
+                <b>互助</b>
+            </button>
+            <button onclick="Paragraph()">
+                <i class="fa fa-wechat fa-4x fa-fw"></i><br>
+                <b>論壇</b>
+            </button>
+            <button onclick="Pair()">
+                <i class="fa fa-venus-mars fa-4x fa-fw"></i><br>
+                <b>配對</b>
+            </button>
+            <button onclick="Contact()">
+                <i class="fa fa-bullhorn fa-4x fa-fw"></i><br>
+                <b>回報</b>
+            </button>
+        </div>
+    </div>
+    <div id="ImgContainer" style="width:0;height:0;overflow:hidden">
+        <input type="file" accept="image/*" onchange="UploadImage()">
+    </div>
+    <div id="GrayBackground" style="display:none" onclick="ChangeSelfie()"></div>
+    <div id="Actions" style="display:none">
+        <div class="TwoBtn" onclick="UploadSelfie()">上傳頭像</div>
+        <div class="TwoBtn" onclick="DeleteSelfie()">刪除頭像</div>
+    </div>
+    <div id="Waiting" align="center" style="display:none">
+        <div>
+            <i class="fa fa-spinner fa-spin fa-5x fa-pulse"></i><br>
+            <b>頭像上傳中</b>
+        </div>
+    </div>
+    <script src="/static/UserCenter/UserCenter.js"></script>
+</body>
+</html>

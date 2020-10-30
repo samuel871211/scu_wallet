@@ -1,0 +1,116 @@
+#header{
+    margin: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(#7B90D2,#0B346E);
+    position: fixed;
+    top: 0;
+}
+#header i{
+    cursor:pointer;
+    color:white;
+}
+#FourmIconTd{
+     width: 60px;
+     padding-left: 1%;
+}
+#FourmTd{
+     padding-left: 2%;
+     font-size: 20px;
+     font-weight: bold;
+}
+#HomeIconTd{
+     padding-right: 2%;
+}
+#BottomArea{
+    width:100%;
+    overflow: auto;
+    position:fixed;
+    top:70px;
+    bottom:0;
+}
+#AllParagraph{
+    border-collapse:collapse;
+    word-break:break-all;
+    width:100%;
+    background-color:white;
+}
+a{
+    text-decoration:none;
+    color: black;
+}
+#AllParagraph td{
+    border-bottom: 1px solid #cccccc;
+    position: relative;
+}
+.TitleDiv{
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.DetailDiv{
+    width: 100%;
+    display: inline-block;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.ThreeDiv{
+    float: left;
+    width: 50%;
+}
+.DeleteEditDiv{
+    width:100%;
+    display:inline-block;
+}
+.DeleteDiv{
+    width:50%;
+    float:left;
+    font-weight:bold;
+    font-family:Microsoft JhengHei;
+    color: red;
+}
+.DeleteDiv b{
+    cursor: pointer;
+}
+.EditDiv{
+    width:50%;
+    float:right;
+    font-weight:bold;
+    font-family:Microsoft JhengHei;
+    color: blue;
+}
+.EditDiv b{
+    cursor: pointer;
+}
+.TimeDiv{
+    float: right;
+    width: 50%;
+}
+body{
+    margin:0;
+}
+button{
+    padding:0;
+    margin:0;
+    border:none;
+    background:none;
+    outline:none;
+    cursor:pointer;
+}
+#BottomArea{
+    position:fixed;
+    width:100%;
+    top:70px;
+    bottom:0;
+}
+#AllParagraph{
+    width:100%;
+    border-collapse:collapse;
+    word-break:break-all;
+    table-layout: fixed;
+}
+i{
+    cursor: pointer;
+}

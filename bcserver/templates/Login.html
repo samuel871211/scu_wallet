@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+	<title>東吳人 - 首頁</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="redirect" content="{{ redirect }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+	<link type="text/css" rel="stylesheet" href="/static/login/login.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/login/login.js"></script>
+</head>
+<body>
+	<table id="header">
+        <tr>
+            <td id="SoochowTd">
+                <img src="/static/scubadge-removebg-preview.png" style="width:67px">
+            </td>
+            <td id="LoginTd">
+            	Login
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea" align="center">
+    	
+    	<div style="width:100%;height:5%"></div>
+		
+		<div id="title">東吳人錢包</div>
+
+		<div style="width:100%;height:5%"></div>
+
+	    <input id="username" type="text" placeholder="帳號">
+
+	    <div style="width:100%;height:2%"></div>
+
+    	<input id="password" type="password" placeholder="密碼">
+
+    	<div style="width:100%;height:2%"></div>
+
+    	<button id="login" onclick="login()">登入</button>
+
+    	<div style="width:100%;height:2%"></div>
+    	
+    	<div style="width:200px">
+    		<div align="right">
+    			<a id="retrieve" href="/retrieve.html">忘記帳密</a>
+    		</div>
+    	</div>
+    	
+    	<div style="width:100%;height:5%"></div>
+    	
+    	<div style="width:200px">
+    		<div align="left">
+    			<a id="SignUp" href="/SignUp.html">免費註冊</a>
+    			<b style="font-size:14px">獲得東吳幣!</b>
+    		</div>
+    	</div>
+    	
+    	<div style="position:fixed;bottom:1%;left:5px">
+    		<button id="AboutUs" onclick="AboutUs()">關於我們</button>
+    	</div>
+    </div>
+</body>
+</html>

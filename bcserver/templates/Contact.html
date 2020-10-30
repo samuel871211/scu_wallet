@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <title>東吳人 - 問題回報</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link type="text/css" rel="stylesheet" href="/static/contact/contact.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="ContactIconTd">
+                <i class="fa fa-bullhorn fa-4x"></i>
+            </td>
+            <td id="ContactTd">
+                Contact
+            </td>
+            <td id="HomeIconTd" align="right">
+                <button onclick="UserCenter()">
+                    <i class="fa fa-home fa-3x" style="color:white"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <table id="TwoBtnTable">
+        <tr> 
+            <td align="center" class="TwoBtnTd">
+                <button onclick="DisplayReceive()" style="color:blue">領取東吳幣</button>
+            </td>
+            <td align="center" class="TwoBtnTd">
+                <button onclick="DisplayContact()" style="color:#808080">問題回報</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top:0;margin:0">
+                <div style="display:inline-block;width:100%;background-color:#dcdcdc">
+                    <hr class="UnderLine" style="float:left;">
+                    <hr class="UnderLine" style="float:right;display:none">
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+    <div id="BottomArea" align="center">
+        <div id="FirstArea">
+            
+            <div style="width:100%;height:30px"></div>
+
+            <select id="reason" align="center">
+                <option value="請選擇領取項目" selected>請選擇領取項目</option>
+                <option value="註冊獎勵">註冊獎勵</option>
+                <option value="任務取消">任務取消</option>
+                <option value="任務完成">任務完成</option>
+                <option value="任務刪除">任務刪除</option>
+            </select>
+
+            <div style="width:100%;height:30px"></div>
+
+            <button onclick="confirm()" id="confirm">確認</button>
+        </div>
+        <div id="SecondArea" style="display:none">
+
+            <textarea id="title" placeholder="意見反饋(限50字以內)"></textarea>
+            
+            <textarea id="description" placeholder="詳細描述(限500字以內)"></textarea>
+         
+            <table style="padding:0;margin-top:30px">
+                <tr>
+                    <td class="BtnTd">
+                        <button class="InputClick" onclick="InputClick('0')">
+                            <i class="fa fa-file-image-o fa-lg"></i>
+                        </button>
+                    </td>
+                    <td class="BtnTd">
+                        <button class="InputClick" onclick="InputClick('1')">
+                            <i class="fa fa-file-image-o fa-lg"></i>
+                        </button>
+                    </td>
+                    <td class="BtnTd">
+                        <button class="InputClick" onclick="InputClick('2')">
+                            <i class="fa fa-file-image-o fa-lg"></i>
+                        </button>
+                    </td>
+                    <td class="BtnTd">
+                        <button class="InputClick" onclick="InputClick('3')">
+                            <i class="fa fa-file-image-o fa-lg"></i>
+                        </button>
+                    </td>
+                    <td class="BtnTd">
+                        <button class="InputClick" onclick="InputClick('4')">
+                            <i class="fa fa-file-image-o fa-lg"></i>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            
+            <button id="SendAdvise" onclick="SendAdvise()">
+                送出 <i class="fa fa-send"></i>
+            </button>
+
+            <div id="ImgContainer" style="width:0;height:0;overflow:hidden">
+                <input type="file" accept="image/*" onchange="UploadImage('0')">
+                <input type="file" accept="image/*" onchange="UploadImage('1')">
+                <input type="file" accept="image/*" onchange="UploadImage('2')">
+                <input type="file" accept="image/*" onchange="UploadImage('3')">
+                <input type="file" accept="image/*" onchange="UploadImage('4')">
+            </div>
+        </div>
+    </div>
+    <div id="GrayBackground" style="display:none" onclick="Actions()">
+    </div>
+    <div id="WaitSpin" style="display:none">
+        <i class="fa fa-spinner fa-spin fa-5x fa-pulse"></i>
+    </div>
+    <script src="/static/contact/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+#header{
+    margin: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(#7B90D2,#0B346E);
+    position: fixed;
+    top: 0;
+}
+#GamesIconTd{
+     width: 60px;
+     padding-left: 1%;
+}
+#GamesTd{
+     padding-left: 2%;
+     font-size: 20px;
+     font-weight: bold;
+}
+#HomeIconTd{
+     padding-right: 2%;
+}
+#FirstArea{
+    width: 100%;
+    position: fixed;
+    top: 69px;
+    bottom: 0;
+    margin: 5%;
+}
+#AB{
+    width: 90%;
+    height: 50%;
+    position: relative;
+}
+#Lottery{
+    width: 90%;
+    height: 50%;
+    position: relative;
+}
+.texts{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    line-height: 2.5;
+}
+#DisplayAB{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    border-radius: 10px;
+    padding: 20px;
+    outline: none;
+    background-color: #EDD170;
+}
+#Display539{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    border-radius: 10px;
+    padding: 20px;
+    outline: none;
+    background-color: #1ECFD6;
+}
+#SecondArea{
+    width: 100%;
+    position: fixed;
+    top: 69px;
+    bottom: 0;
+}
+#PredictArea{
+    width:50%;
+    height:100%;
+    float:right;
+    overflow: auto;
+    display: inline;
+}
+#DigitKeyboard{
+    width:50%;
+    height:100%;
+    float:left;
+}
+#DigitKeyboard button{
+    width: 13vw;
+    height: 13vw;
+    max-width: 13vh;
+    max-height: 13vh;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    margin: 2%;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    box-shadow: 5px 5px #999999;
+}
+#DigitKeyboard button:active{
+    box-shadow: 3px 3px #666666;
+    transform: translateY(2px);
+}
+#Predict{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 100px;
+    height: 42px;
+}
+#PredictNumber div, #PredictAB div{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+#PredictNumber{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+#PredictAB{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+#ThirdArea{
+    width: 100%;
+    position: fixed;
+    top: 69px;
+    bottom: 0;
+}
+.GameInstructions{
+    width: 50%;
+    height: 100%;
+    outline: none;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    float: left;
+}
+.back{
+    width: 50%;
+    height: 100%;
+    outline: none;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    float: left;
+}
+#RightArea{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+#LeftArea{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.Icons{
+    align-items: center;
+    justify-content: center;
+}
+.IconsBtn{
+    outline: none;
+    cursor: pointer;
+}
+.IconsBtn:hover{
+    color: red;
+}
+#date{
+    font-size: 20px;
+    float:right;
+    font-family:Microsoft JhengHei;
+    font-weight:bold;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-right:none;
+    border-color:black;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height:100%;
+    background:none;
+    outline:none;
+}
+#WinningNumbersBtn{
+    font-size: 20px;
+    float: right;
+    font-family:Microsoft JhengHei;
+    font-weight:bold;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-left:none;
+    border-color:black;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height:100%;
+    padding-right: 15px; 
+    padding-left:15px;
+}
+.Div39{
+    width: 100%;
+    height: 10%;
+    margin-bottom: 8px;
+}
+.Btn39{
+    width: 20vw;
+    height: 20vw;
+    max-width:8vh;
+    max-height: 8vh;
+    font-weight: bold;
+    font-size: 18px;
+    cursor:pointer;
+    border-radius: 100%;
+    border-width: 2px;
+    border-color:black;
+    background:none;
+    outline:none;
+}
+#Btn40{
+    color: red;
+    display: none;
+}
+.Btn10{
+    width: 32px;
+    height: 32px;
+    color:black;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 100%;
+    border-width: 2px;
+    border-color:black;
+    background-color:white;
+    outline:none;
+}
+.BlockBtn{
+    height:16%;
+    width:100%;
+    border:1px solid black;
+    border-bottom: 0;
+    font-size:18px;
+    font-weight:bold;
+    font-family:Microsoft JhengHei;
+    background:none;
+    outline:none;
+}
+#LevelTitle{
+    font-size: 20px;
+    font-weight: bold;
+    font-family:Microsoft JhengHei;
+    color: red;
+    margin-top:1%;
+}
+.NameList div{
+    font-size:18px;
+    font-weight:bold;
+    margin:2%;
+    margin-left:5%;
+}
+#WallOfLegend{
+    width:75%;
+    height:96%;
+    float:right;
+    overflow:auto;
+}
+body{
+    margin:0;
+    background: -webkit-linear-gradient(45deg,#EDD170,#1ECFD6);
+}
+button:not(.Btn39):not(.Btn10):not(.BlockBtn){
+    background:none;
+    border:0;
+    padding:0;
+    outline:none;
+}
+button:hover:not(.Btn39):not(.Btn10){
+    cursor:pointer;
+}

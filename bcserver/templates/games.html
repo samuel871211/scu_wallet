@@ -1,0 +1,244 @@
+<html>
+<head>
+    <title>東吳人 - 遊戲專區</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link type="text/css" rel="stylesheet" href="/static/games/games.css">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="GamesIconTd">
+                <i class="fa fa-gamepad fa-4x" style="color:white"></i>
+            </td>
+            <td id="GamesTd" style="color:white">
+                Games
+            </td>
+            <td id="HomeIconTd" align="right">
+                <button onclick="UserCenter()"><i class="fa fa-home fa-3x" style="color:white"></i></button>
+            </td>
+        </tr>
+    </table>
+    <div id="FirstArea" style="display:none">
+        <div align="right" id="AB">
+            <div class="texts">#輕鬆玩遊戲，也能賺取東吳幣!</div>
+            <div class="texts">#快來挑戰你的邏輯推理吧!</div>
+            <table style="position: absolute;bottom: 5%;width: 100%">
+                <tr>
+                    <td id="PleaseWait" align="left" style="display:none">
+                        <b style="font-family:Microsoft JhengHei;color:red;font-size:20px">獎勵發送中</b>
+                        <i class="fa fa-spinner fa-spin fa-lg fa-pulse" style="color:red"></i>
+                    </td>
+                    <td align="right">
+                        <button id="DisplayAB" onclick="up(this.id)">猜數字</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="Lottery">
+            <div style="position: absolute; top: 5%">
+                <button id="Display539" onclick="up(this.id)">今彩539</button>
+            </div>
+            <div style="position: absolute;bottom: 0;left: 0;width: 100%">
+                <div class="texts">#每天都來碰碰運氣!</div>
+                <div class="texts">#有機會可以獲得東吳幣呦!</div>
+            </div>
+        </div>
+    </div>
+    <div id="SecondArea" style="display:none">
+        <div style="width: 100%;height: 10%;">
+            <button class="back" onclick="down('SecondArea')">
+                返回
+                <i class="fa fa-chevron-left fa-lg"></i>
+            </button>
+            <button class="GameInstructions" onclick="GameInstructions('AB')">
+                說明
+                <i class="fa fa-book fa-lg"></i>
+            </button>
+        </div>
+        <div style="width:100%;height:5%;visibility:hidden">x</div>
+        <div style="width:100%;height:85%;display:inline-block;">
+            <div id="DigitKeyboard">
+                <div align="center">
+                    <div align="center" id="Predict"></div>
+                </div>
+                <div align="center" class="Keyboard">
+                    <button onclick="KeyIn('7')">7</button>
+                    <button onclick="KeyIn('8')">8</button>
+                    <button onclick="KeyIn('9')">9</button>
+                </div>
+                <div align="center" class="Keyboard">
+                    <button onclick="KeyIn('4')">4</button>
+                    <button onclick="KeyIn('5')">5</button>
+                    <button onclick="KeyIn('6')">6</button>
+                </div>
+                <div align="center" class="Keyboard"> 
+                    <button onclick="KeyIn('1')">1</button>
+                    <button onclick="KeyIn('2')">2</button>
+                    <button onclick="KeyIn('3')">3</button>
+                </div>
+                <div align="center" class="Keyboard">
+                    <button onclick="KeyIn('0')">0</button>
+                    <button onclick="KeyIn('back')"><i class="fa fa-long-arrow-left fa-lg"></i></button>
+                    <button onclick="KeyIn('ok')" id="ok">ok</button>
+                </div>
+            </div>
+            <div id="PredictArea">
+                <div id="PredictNumber"></div>
+                <div id="PredictAB"></div>
+            </div>
+        </div>
+    </div>
+    <div id="ThirdArea" style="display:none">
+        <div style="width: 100%;height: 10%;display: inline-block">
+            <button class="back" onclick="down('ThirdArea')">
+                返回
+                <i class="fa fa-chevron-left fa-lg"></i>
+            </button>
+            <button class="GameInstructions" onclick="GameInstructions('539')">
+                說明
+                <i class="fa fa-book fa-lg"></i>
+            </button>
+        </div>
+        <div id="ThirdArea_Main" style="width:100%;height:90%;display: inline-block">
+            <div id="RightArea">
+                <div class="Icons" align="center" style="height:100%;display:flex;">
+                    <button class="IconsBtn" onclick="ThirdArea('ThirdArea_539')">
+                        <img src="/static/start-button.svg" style="width:150px"><br>
+                        <b style="font-family:Microsoft JhengHei;font-size:26px">開始遊戲</b>
+                    </button>
+                </div>
+            </div>
+            <div id="LeftArea">
+                <div class="Icons" align="center" style="height:100%;display:flex;">
+                    <button class="IconsBtn" onclick="ThirdArea('ThirdArea_Search')">
+                        <img src="/static/search.svg" style="width:150px"><br>
+                        <b style="font-family:Microsoft JhengHei;font-size:26px">查詢/開獎</b>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="ThirdArea_Search" style="width:100%;height:90%;display:none">
+            <div align="center" style="width:100%;height:10%">
+                <button onclick="ThirdArea('ThirdArea_Search')">
+                    <i class="fa fa-angle-double-down fa-2x"></i>
+                </button>
+            </div>
+            <div align="center" style="width:100%;height:90%">
+                <div style="width:100%;height:10%">
+                    <div style="display:inline-block;">
+                        <button id="WinningNumbersBtn" onclick="WinningNumbers()"></button>
+                        <input id="date" type="date" onchange="DateChange(this.value)">
+                    </div>
+                </div>
+                <div style="margin-top:1%;margin-right:2%;margin-left:2%;height:90%">
+                    <div align="center" style="height:10%">
+                        <b style="font-family:Microsoft JhengHei">本期獎號：</b>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                    </div>
+                    <div align="center" style="height:10%">
+                        <b style="font-family:Microsoft JhengHei;">您的號碼：</b>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                        <button class="Btn10"></button>
+                    </div>
+                    <div style="width:100%;height:80%;display:inline-block;">
+                        <div style="width:25%;height:100%;float:left">
+                            <button class="BlockBtn" onclick="DisplayLevel(this,'5')">頭獎</button>
+                            <button class="BlockBtn" onclick="DisplayLevel(this,'4')">貳獎</button>
+                            <button class="BlockBtn" onclick="DisplayLevel(this,'3')">參獎</button>
+                            <button class="BlockBtn" onclick="DisplayLevel(this,'2')">肆獎</button>
+                            <button class="BlockBtn" onclick="DisplayLevel(this,'1')">伍獎</button>
+                            <button class="BlockBtn" onclick="DisplayLevel(this,'0')" style="border-bottom:1px solid black">陸獎</button>
+                        </div>
+                        <div id="WallOfLegend" style="display:none">
+                            <div id="LevelTitle"></div>
+                            <div class="NameList" id="NameList0" align="left" style="display:none"></div>
+                            <div class="NameList" id="NameList1" align="left" style="display:none"></div>
+                            <div class="NameList" id="NameList2" align="left" style="display:none"></div>
+                            <div class="NameList" id="NameList3" align="left" style="display:none"></div>
+                            <div class="NameList" id="NameList4" align="left" style="display:none"></div>
+                            <div class="NameList" id="NameList5" align="left" style="display:none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ThirdArea_539" style="width:100%;height:90%;display:none">
+            <div align="center" style="width:100%;height:10%">
+                <button onclick="ThirdArea('ThirdArea_539')">
+                    <i class="fa fa-angle-double-down fa-2x"></i>
+                </button>
+            </div>
+            <div align="center" style="width:100%;height:90%">
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'1')">01</button>
+                    <button class="Btn39" onclick="AddNumber(this,'2')">02</button>
+                    <button class="Btn39" onclick="AddNumber(this,'3')">03</button>
+                    <button class="Btn39" onclick="AddNumber(this,'4')">04</button>
+                    <button class="Btn39" onclick="AddNumber(this,'5')">05</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'6')">06</button>
+                    <button class="Btn39" onclick="AddNumber(this,'4')">07</button>
+                    <button class="Btn39" onclick="AddNumber(this,'8')">08</button>
+                    <button class="Btn39" onclick="AddNumber(this,'9')">09</button>
+                    <button class="Btn39" onclick="AddNumber(this,'10')">10</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'11')">11</button>
+                    <button class="Btn39" onclick="AddNumber(this,'12')">12</button>
+                    <button class="Btn39" onclick="AddNumber(this,'13')">13</button>
+                    <button class="Btn39" onclick="AddNumber(this,'14')">14</button>
+                    <button class="Btn39" onclick="AddNumber(this,'15')">15</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'16')">16</button>
+                    <button class="Btn39" onclick="AddNumber(this,'17')">17</button>
+                    <button class="Btn39" onclick="AddNumber(this,'18')">18</button>
+                    <button class="Btn39" onclick="AddNumber(this,'19')">19</button>
+                    <button class="Btn39" onclick="AddNumber(this,'20')">20</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'21')">21</button>
+                    <button class="Btn39" onclick="AddNumber(this,'22')">22</button>
+                    <button class="Btn39" onclick="AddNumber(this,'23')">23</button>
+                    <button class="Btn39" onclick="AddNumber(this,'24')">24</button>
+                    <button class="Btn39" onclick="AddNumber(this,'25')">25</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'26')">26</button>
+                    <button class="Btn39" onclick="AddNumber(this,'27')">27</button>
+                    <button class="Btn39" onclick="AddNumber(this,'28')">28</button>
+                    <button class="Btn39" onclick="AddNumber(this,'29')">29</button>
+                    <button class="Btn39" onclick="AddNumber(this,'30')">30</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'31')">31</button>
+                    <button class="Btn39" onclick="AddNumber(this,'32')">32</button>
+                    <button class="Btn39" onclick="AddNumber(this,'33')">33</button>
+                    <button class="Btn39" onclick="AddNumber(this,'34')">34</button>
+                    <button class="Btn39" onclick="AddNumber(this,'35')">35</button>
+                </div>
+                <div class="Div39">
+                    <button class="Btn39" onclick="AddNumber(this,'36')">36</button>
+                    <button class="Btn39" onclick="AddNumber(this,'37')">37</button>
+                    <button class="Btn39" onclick="AddNumber(this,'38')">38</button>
+                    <button class="Btn39" onclick="AddNumber(this,'39')">39</button>
+                    <button class="Btn39" onclick="AddNumber(this,'ok')" id="Btn40">ok</button>
+                </div>
+            </div>
+        </div>
+    <script src="/static/games/games.js"></script>
+</body>
+</html>

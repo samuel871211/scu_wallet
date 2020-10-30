@@ -1,0 +1,101 @@
+#header{
+    margin: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(270deg,#c17df5,#8c5db0);
+    position:fixed;
+    top:0;
+}
+#PairIconTd{
+     width: 70px;
+     padding-left: 1%;
+}
+#PairTd{
+     padding-left: 2%;
+     font-size: 20px;
+     font-weight: bold;
+}
+#HomeIconTd{
+     padding-right: 2%;
+}
+#JoinArea{
+    margin: 5%;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+#TextingArea div:not(#TwoChoice):not(.hide){
+    font-family: Microsoft JhengHei;
+    /*padding-bottom: 1%;*/
+    line-height:1.8;
+    color: #3bb0ff;
+    font-weight: bold;
+}
+#TwoChoice{
+    display:inline-block;
+    width:100%;
+}
+.hide{
+    width:50%;
+    font-size:20px;
+    font-family:Microsoft JhengHei;
+}
+#JoinArea table{
+    width: 96%;
+    margin: 2%;
+    margin-top: 5%;
+}
+ #JoinArea td{
+    width: 50%;
+    font-family: Microsoft JhengHei;
+}
+#JoinArea button{
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: Microsoft JhengHei;
+    background-color: #0099ff;
+    border-radius: 5px;
+    padding: 11%;
+}
+#StartToChat{
+    margin: 5%;
+    margin-top: 8%;
+    padding: 2%;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+#TextingArea2 div{
+    font-family: Microsoft JhengHei;
+    line-height: 1.8;
+    color: #f79292;
+    font-weight: bold;
+}
+#StartToChat button{
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: Microsoft JhengHei;
+    background-color: #ff7d45;
+    border-radius: 5px;
+    padding: 5%; 
+    margin: 2%;
+    margin-top:10%;
+}
+body{
+    margin:0;
+    background-color: #ead2fc;
+}
+button{
+    background:none;
+    outline: none;
+    border:0;
+    padding:0;
+    cursor:pointer;
+}
+#BottomArea{
+    position:fixed;
+    width:100%;
+    top:70px;
+    bottom:0;
+    overflow:auto;
+}

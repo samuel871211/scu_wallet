@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>東吳人 - 我的信箱</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="username" content="{{username}}">
+    <meta name="res" content="{{res}}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/static/mail/mail.css">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="MailIconTd">
+                <i class="fa fa-envelope fa-4x" ></i>
+            </td>
+            <td id="MailTd" >
+                Mail
+            </td>
+            <td id="HomeTd" align="right">
+                <button onclick="UserCenter()">
+                    <i class="fa fa-home fa-3x" style="color:white"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <table id="TwoBtnTable">
+        <tr> 
+            <td align="center" class="TwoBtnTd">
+                <button onclick="DisplaySystemMail()">系統郵件</button>
+            </td>
+            <td align="center" class="TwoBtnTd">
+                <button onclick="DisplayContactMail()" disabled="true">回報進度</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top:0;margin:0">
+                <div style="display:inline-block;width:100%;background-color:#ebebeb;">
+                    <hr class="UnderLine" style="float:left;">
+                    <hr class="UnderLine" style="float:right;display:none">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea" align="center">
+        <div id="Waiting" align="center" style="position:fixed;bottom:50%;width:100%">
+            <i class="fa fa-spinner fa-spin fa-5x fa-pulse"></i>
+        </div>
+        <table id="SystemMail" style="display:none"></table>
+        <table id="ContactMail" style="display:none"></table>
+    </div>
+    <script src="/static/mail/mail.js"></script>
+</body>
+</html>

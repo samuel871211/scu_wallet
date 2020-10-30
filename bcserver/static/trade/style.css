@@ -1,0 +1,12 @@
+.TwoBtnTd:hover{
+    background-color:#b8b8b8;
+}
+#TwoBtnDiv button:hover{
+	background-color:#ff4e21;
+}
+#LogTable td:hover{
+	background-color:#c4c4c4;
+}
+#EvaluateDiv i:hover{
+    color:#fff830;
+}

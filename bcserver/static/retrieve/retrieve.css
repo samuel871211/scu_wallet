@@ -1,0 +1,103 @@
+#header{
+    margin: 0;
+    width:100%;
+    background: -webkit-linear-gradient(#7B90D2,#0B346E);
+    position: fixed;
+    top:0;
+    height:70px;
+}
+#SoochowTd{
+     width:67px;
+     padding-left: 1%;
+     color:white;
+}
+#RetrieveTd{
+     padding-left: 2%;
+     font-size: 20px;
+     font-weight: bold;
+     color:white;
+}
+#BackTd{
+	padding-right:2%;
+	color:white;
+	cursor:pointer;
+}
+#Notice{
+    position:fixed;
+    top:0;
+    bottom:0;
+    width:100%;
+    vertical-align:center;
+    background-color:#737373;
+    opacity:0.8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+body{
+	margin:0;
+}
+button{
+    padding:0;
+    margin:0;
+    border:0;
+    background:none;
+    outline:none;
+}
+#BottomArea{
+	position:fixed;
+	top:120px;
+	bottom:0;
+	width:100%;
+	overflow:auto;
+}
+#TwoBtnTable{
+    table-layout:fixed;
+    border-collapse:collapse;
+    width:100%;
+    position:fixed;
+    top:70px;
+}
+.TwoBtnTd{
+    background-color:#ebebeb;
+}
+.TwoBtnTd button{
+    width:100%;
+    color:#5c5c5c;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+    font-family:Microsoft JhengHei;
+    cursor:pointer;
+}
+.UnderLine{
+    border:0;
+    border-bottom:2px solid blue;
+    padding:0;
+    margin:0;
+    width:50%;
+}
+#username,#password,#Email{
+	border:3px dashed #bababa;
+    width:194px;
+    height:44px;
+    padding:0;
+    margin:0;
+    font-size:14px;
+    font-family:DFKai-sb;
+}
+#Retrieve{
+    width:200px;
+    height:50px;
+    background-color:#ff8340;
+    border:none;
+    font-size:20px;
+    font-weight:bold;
+    font-family:DFKai-sb;
+    outline:none;
+    box-shadow: 5px 5px #999999;
+}
+#Retrieve:active{
+    box-shadow: 3px 3px #666666;
+    transform: translateY(2px);
+}

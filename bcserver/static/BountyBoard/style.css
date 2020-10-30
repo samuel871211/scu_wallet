@@ -1,0 +1,14 @@
+#AllBounty td:hover{
+    background-color:#faf5a5;
+    cursor:pointer;
+}
+.TwoBtnTd:hover{
+    background-color:#b8b8b8;
+}
+#BottomArea button:hover{
+	font-size:18px;
+}
+#MyBounty td:hover{
+	background-color:#faf5a5;
+    cursor:pointer;
+}

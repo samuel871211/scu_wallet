@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <title>東吳人 - 論壇 - 首頁</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="res" content="{{ res }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/static/paragraph/paragraph.css">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="FourmIconTd">
+                <i class="fa fa-wechat fa-4x" style="color:white"></i>
+            </td>
+            <td id="FourmTd" style="color:white">
+                Fourm
+            </td>
+            <td id="HomeIconTd" align="right">
+                <button onclick="UserCenter()"><i class="fa fa-home fa-3x" style="color:white"></i></button>
+            </td>
+        </tr>
+    </table>
+    <div id="AllParagraphDiv">
+        <table id="AllParagraph"></table>
+    </div>
+    <table id="BottomArea">
+        <tr>
+            <td style="width:50px">
+                <button onclick="Display('SearchArea','fa fa-search fa-3x')">
+                    <i class="fa fa-search fa-3x" style="color:white"></i>
+                </button>
+            </td>
+            <td>
+                <div id="SearchArea" style="display: none">
+                    <input type="text" placeholder="全文搜索..." onkeydown="search()">
+                </div>
+                <div id="PencilArea" style="display: none">
+                    <div style="display: inline">
+                        <button onclick="ManageMyParagraph()">我的文章</button>
+                        <button onclick="PublishParagraph()">我想發文</button>
+                    </div>
+                </div>
+                <div id="FilterArea" style="display: none">
+                    <div style="display: inline;">
+                        <select onchange="Filter()">
+                            <option value="TimeDiv">最新發文</option>
+                            <option value="LikeCount">最多讚數</option>
+                            <option value="ResponseCount">最多回應</option>
+                        </select>
+                        <select onchange="Filter()">
+                            <option value="所有">所有子版</option>
+                            <option value="討論">討論</option>
+                            <option value="感情">感情</option>
+                            <option value="遊戲">遊戲</option>
+                            <option value="閒聊">閒聊</option>
+                            <option value="運動">運動</option>
+                            <option value="電影">電影</option>
+                            <option value="課程">課程</option>
+                            <option value="動漫">動漫</option>
+                            <option value="美食">美食</option>
+                            <option value="廢文">廢文</option>
+                            <option value="問題">問題</option>
+                            <option value="創作">創作</option>
+                            <option value="分享">分享</option>
+                            <option value="八卦">八卦</option>    
+                        </select>
+                    </div>
+                </div>
+            </td>
+            <td align="right" style="width:100px">
+                <button onclick="Display('PencilArea','fa fa-pencil fa-3x')">
+                    <i class="fa fa-pencil fa-3x" style="color:white"></i>
+                </button>
+                <button onclick="Display('FilterArea','fa fa-filter fa-3x')">
+                    <i class="fa fa-filter fa-3x" style="color:white"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <script src="/static/paragraph/paragraph.js"></script>
+</body>
+</html>

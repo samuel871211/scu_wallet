@@ -1,0 +1,120 @@
+#header{
+    margin: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(#7B90D2,#0B346E);
+    position: fixed;
+    top: 0;
+}
+#FourmIconTd{
+     width: 60px;
+     padding-left: 1%;
+}
+#FourmTd{
+     padding-left: 2%;
+     font-size: 20px;
+     font-weight: bold;
+}
+#HomeIconTd{
+     padding-right: 2%;
+}
+#AllParagraphDiv{
+    width:100%;
+    overflow: auto;
+    position:fixed;
+    top:70px;
+    bottom:55px;
+}
+#AllParagraph{
+    border-collapse:collapse;
+    word-break:break-all;
+    width:100%;
+    background-color:white;
+}
+a{
+    text-decoration:none;
+    color: black;
+}
+#AllParagraph td{
+    border-bottom: 1px solid #cccccc; 
+}
+.TitleDiv{
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Microsoft JhengHei;
+    white-space: pre-wrap;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.DetailDiv{
+    width: 100%;
+    display: inline-block;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.ThreeDiv{
+    float: left;
+    width: 50%;
+}
+.TimeDiv{
+    float: right;
+    width: 50%;
+}
+#BottomArea{
+    width:100%;
+    position:fixed;
+    bottom:0;
+    background-color:#265aa3;
+}
+#BottomArea button{
+    margin:5px 5% 5px 5%;
+    outline: none;
+}
+#PencilArea button{
+    width:50%;
+    float:right;
+    font-family:Microsoft JhengHei;
+    font-weight:bold;
+    font-size:16px;
+    padding: 0;
+    margin: 0;
+    outline:none;
+}
+#SearchArea input{
+    width:100%;
+    padding:5px;
+    font-family:Microsoft JhengHei;
+    font-weight:bold;
+    border-width:1px;
+    border-color:#000000;
+    border-radius:10px;
+    outline:none;
+}
+#FilterArea select{
+    width:50%;
+    float:right;
+    padding:5px;
+    font-size: 16px;
+    font-family:Microsoft JhengHei;
+    font-weight:bold;
+    border-width:1px;
+    border-color:#000000;
+    border-radius:10px;
+    outline:none;
+    background-color: white;
+}
+body{
+    margin:0;
+}
+button{
+    background:none;
+    border:0;
+    padding:0;
+}
+#PencilArea button{
+    background-color: white;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+}

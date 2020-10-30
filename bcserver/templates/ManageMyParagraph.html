@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>東吳人 - 論壇 - 我的文章</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="res" content="{{ res }}">
+        <link href="/static/favicon.ico" rel="shortcut icon">
+        <link type="text/css" rel="stylesheet" href="/static/ManageMyParagraph/ManageMyParagraph.css">
+        <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+        <body>
+            <table id="header">
+                <tr>
+                    <td id="FourmIconTd">
+                        <i class="fa fa-wechat fa-4x" onclick="Back()"></i>
+                    </td>
+                    <td id="FourmTd" style="color:white">
+                        MyPosts
+                    </td>
+                    <td id="HomeIconTd" align="right">
+                        <button onclick="UserCenter()">
+                            <i class="fa fa-home fa-3x"></i>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            <div id="BottomArea">
+                <table id="AllParagraph"></table>
+            </div>
+            <script src="/static/ManageMyParagraph/ManageMyParagraph.js"></script>
+        </body>
+</html>

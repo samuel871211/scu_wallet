@@ -1,0 +1,144 @@
+<html>
+<head>
+    <title>東吳人 - 論壇 - 發佈文章</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link type="text/css" rel="stylesheet" href="/static/PublishParagraph/PublishParagraph.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="res" content="{{ res }}">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body style="display:none">
+    <table id="header">
+        <tr>
+            <td id="FourmIconTd">
+                <i class="fa fa-wechat fa-4x" onclick="Back()"></i>
+            </td>
+            <td id="PublishTd" style="color:white">
+               Publish
+            </td>
+            <td id="HomeIconTd" align="right">
+                <button onclick="UserCenter()">
+                    <i class="fa fa-home fa-3x"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <div id="BottomArea" align="center">
+        <table style="width:100%;table-layout:fixed;border-collapse:collapse">
+            <tr>
+                <td align="left">
+                    <select id="ClassList">
+                        <optgroup label="請選擇子版">
+                            <option value="討論">討論</option>
+                            <option value="感情">感情</option>
+                            <option value="遊戲">遊戲</option>
+                            <option value="閒聊">閒聊</option>
+                            <option value="運動">運動</option>
+                            <option value="電影">電影</option>
+                            <option value="課程">課程</option>
+                            <option value="動漫">動漫</option>
+                            <option value="美食">美食</option>
+                            <option value="廢文">廢文</option>
+                            <option value="問題">問題</option>
+                            <option value="創作">創作</option>
+                            <option value="分享">分享</option>
+                            <option value="八卦">八卦</option>
+                        </optgroup>
+                    </select>
+                </td>
+                <td align="center" class="hide" onclick="hide(this)">
+                    <i class="fa fa-check-square"></i>
+                    <b>顯示學系</b>
+                </td>
+                <td align="center" class="hide" onclick="hide(this)">
+                    <i class="fa fa-check-square"></i>
+                    <b>顯示頭像</b>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <input type="text" id="title" placeholder="標題">
+        </div>
+        <div>
+            <textarea id="paragraph" placeholder="內文"></textarea>
+        </div>
+        <table style="padding:0;margin:0;width:100%;table-layout:fixed">
+            <tr>
+                <td colspan="2" id="PictureTd">
+                    圖片
+                </td>
+                <td colspan="3" align="right">
+                    <i class="fa fa-exclamation-circle fa-2x" onclick="Alert()" style="color:#13cf77"></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="BtnTd">
+                    <button class="InputClick" onclick="InputClick('0')">
+                        <i class="fa fa-file-image-o fa-lg"></i><br>
+                        <b>img1</b>
+                    </button>
+                </td>
+                <td class="BtnTd">
+                    <button class="InputClick" onclick="InputClick('1')">
+                        <i class="fa fa-file-image-o fa-lg"></i><br>
+                        <b>img2</b>
+                    </button>
+                </td>
+                <td class="BtnTd">
+                    <button class="InputClick" onclick="InputClick('2')">
+                        <i class="fa fa-file-image-o fa-lg"></i><br>
+                        <b>img3</b>
+                    </button>
+                </td>
+                <td class="BtnTd">
+                    <button class="InputClick" onclick="InputClick('3')">
+                        <i class="fa fa-file-image-o fa-lg"></i><br>
+                        <b>img4</b>
+                    </button>
+                </td>
+                <td class="BtnTd">
+                    <button class="InputClick" onclick="InputClick('4')">
+                        <i class="fa fa-file-image-o fa-lg"></i><br>
+                        <b>img5</b>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" id="PP">
+                    <div style="display:inline-block;width:100%">
+                        <div align="center" style="width:50%;float:left">
+                            <button onclick="preview()" id="preview">
+                                <i class="fa fa-search fa-lg"></i>
+                                <b>預覽</b>
+                            </button>
+                        </div>
+                        <div align="center" style="width:50%;float:right">
+                            <button onclick="InsertNewParagraph()" id="InsertNewParagraph">
+                                <i class="fa fa-paper-plane fa-lg"></i>
+                                <b>發文</b>
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div id="ImgContainer" style="width:0;height:0;overflow:hidden">
+            <input type="file" accept="image/*" onchange="UploadImage('0')">
+            <input type="file" accept="image/*" onchange="UploadImage('1')">
+            <input type="file" accept="image/*" onchange="UploadImage('2')">
+            <input type="file" accept="image/*" onchange="UploadImage('3')">
+            <input type="file" accept="image/*" onchange="UploadImage('4')">
+        </div>
+    </div>
+    <div id="wait" align="center" style="display:none">
+        <div align="center" style="position:fixed;bottom:50%;width:100%">
+            <i class="fa fa-spinner fa-spin fa-pulse fa-5x"></i><br>
+            <b style="font-family:Microsoft JhengHei;">圖片上傳中</b>
+        </div>              
+    </div>
+    <script src="/static/PublishParagraph/PublishParagraph.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>東吳人 - 懸賞</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="username" content="{{ username }}">
+    <meta name="MyBounty" content="{{ MyBounty }}">
+    <meta name="AllBounty" content="{{ AllBounty }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/static/BountyBoard/BountyBoard.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="BountyIconTd">
+                <i class="fa fa-gg fa-4x"></i></i>
+            </td>
+            <td id="HelpTd" >
+                Help
+            </td>
+            <td id="HomeTd" align="right">
+                <button onclick="UserCenter()">
+                    <i class="fa fa-home fa-3x" style="color:white"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <table id="TwoBtnTable">
+        <tr> 
+            <td align="center" class="TwoBtnTd">
+                <button onclick="DisplayAllBounty()">任務</button>
+            </td>
+            <td align="center" class="TwoBtnTd">
+                <button onclick="DisplayRules()">規則</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top:0;margin:0">
+                <div style="display:inline-block;width:100%;background-color:#ebebeb;height:2px">
+                    <hr class="UnderLine" style="float:left;">
+                    <hr class="UnderLine" style="float:right;display:none">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="BodyArea">
+        <table id="AllBounty"></table>
+        <div id="Rules" style="display:none;">
+            <div>
+                #初衷：<br>
+                相信大家都有需要幫助的時候<br>
+                我們希望可以讓那些需要幫助<br>
+                卻苦於找不到同學、朋友幫忙的人<br>
+                可以有個地方，向東吳人請求幫助<br>
+                同時，也希望透過幫助別人<br>
+                人與人之間可以有更多的互動<br><br>
+                #發佈任務規則：<br>
+                需消耗1顆東吳幣<br>
+                不可違反善良風俗<br>
+                不可包含金錢借貸<br>
+                所有任務須在當天完成，<br>
+                否則會由管理者來介入此筆任務<br><br>
+                #接取任務規則：<br>
+                請勿惡意接取任務<br>
+                接取任務後，會提供雙方一個聊天室，<br>
+                讓您們可以在此聯絡後續的事宜<br><br>
+                如違反規則，我們將會做出懲處<br>
+                本網站保有更改規則的權利
+            </div>
+        </div>
+        <div id="PublishBounty" align="center" style="display:none;">
+            
+            <div style="width:100%;height:15px"></div>
+            
+            <input type="time" id="time">
+            
+            <div style="width:100%;height:15px"></div>
+            
+            <input type="text" id="place" placeholder="地點(20字以內)">
+            
+            <div style="width:100%;height:15px"></div>
+
+            <input type="text" id="category" placeholder="分類(ex:跑腿、課業...)">
+            
+            <div style="width:100%;height:15px"></div>
+
+            <textarea placeholder="內容(80字以內)" id="thing"></textarea>
+            
+            <div style="width:100%;height:15px"></div>
+
+            <button id="send" onclick="PublishBounty()">發佈任務</button>
+
+            <div style="width:100%;height:15px"></div>
+        </div>
+        <table id="MyBounty" style="display:none"></table>
+    </div>
+    <table id="BottomArea">
+        <tr>
+            <td>
+                <button onclick="DisplayPublishBounty()">發佈任務</button>
+                <button onclick="DisplayMyBounty()">管理任務</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top:0;margin:0">
+                <div style="display:inline-block;width:100%;height:2px">
+                    <hr class="UnderLine2" style="display:none;float:left;">
+                    <hr class="UnderLine2" style="display:none;float:right;">
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="GrayArea" style="display:none">
+        <i class="fa fa-spinner fa-spin fa-5x fa-pulse"></i>
+    </div>
+    <script src="/static/BountyBoard/BountyBoard.js"></script>
+</body>
+</html>

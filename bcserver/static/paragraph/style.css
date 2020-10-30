@@ -1,0 +1,9 @@
+#AllParagraph td:hover{
+    background-color: #faf5a5;
+}
+#PencilArea button:hover{
+    font-size:18px;
+}
+button:hover{
+    cursor:pointer;
+}

@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>東吳人 - 聊天室</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0 user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="MyName" content="{{ MyName }}">
+    <meta name="SelfieDiv" content="{{ SelfieDiv }}">
+    <meta name="room" content="{{ room }}">
+    <meta name="python_result" content="{{ python_result }}">
+    <link href="/static/favicon.ico" rel="shortcut icon">
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/static/ChatRoom/ChatRoom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+</head>
+<body>
+    <table id="header">
+        <tr>
+            <td id="BackIconTd">
+                <i class="fa fa-angle-left fa-4x" onclick="Back()"></i>
+            </td>
+            <td id="PairTd">
+                <b id="partner">{{partner}}</b>
+                <div id="major">{{major}}</div>
+            </td>
+            <td id="HomeIconTd" align="right">
+                <button onclick="LeaveChatRoom()"><i class="fa fa-home fa-3x"></i></button>
+            </td>
+        </tr>
+    </table>
+    <div id="ShowArea">
+        <div id="StartFromHere"></div>
+    </div>
+    <div id="NewMessage" style="display:none" align="right" onclick="SmoothScroll()">
+        您有新訊息
+        <i class="fa fa-chevron-circle-down fa-lg"></i>
+    </div> 
+    <table id="InputArea">
+        <tr>
+            <td class="ImageTd" align="center">
+                <label class="btn btn-info">
+                    <input style="display:none" type="file" onchange="UploadImage()" accept="image/*">
+                    <i class="fa fa-picture-o fa-2x"></i>
+                </label>
+            </td>
+            <td id="InputTd">
+                <div>
+                    <textarea id="SendMessage" onclick="Scroll()"></textarea>
+                </div>
+            </td>
+            <td class="ImageTd" align="center">
+                <button onclick="NewData()">
+                    <i class="fa fa-send fa-2x"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <div id="GrayBackground" style="display:none" onclick="Actions()">
+    </div>
+    <div id="Actions" style="display:none">
+        <div class="ThreeBtn" onclick="copy()">複製</div>
+        <div class="ThreeBtn" onclick="ReplyMode()">回覆</div>
+        <div class="ThreeBtn" onclick="unsend()">收回</div>
+    </div>
+    <div id="ImgContainer"></div>
+    <script src="/static/ChatRoom/ChatRoom.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+#header{
+    margin: 0;
+    width: 100%;
+    background: -webkit-linear-gradient(#7B90D2,#0B346E);
+    position: fixed;
+    top: 0;
+    color:white;
+}
+#MailIconTd{
+     width: 60px;
+     padding-left: 1%;
+}
+#MailTd{
+     padding-left: 2%;
+     font-size: 20px;
+     font-weight: bold;
+}
+#HomeTd{
+     padding-right: 2%;
+}
+body{
+    margin:0;
+}
+button{
+    padding:0;
+    margin:0;
+    border:0;
+    background:none;
+    outline:none;
+}
+#TwoBtnTable{
+    table-layout:fixed;
+    border-collapse:collapse;
+    width:100%;
+    position:fixed;
+}
+#BottomArea{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    overflow:auto;
+}
+#SystemMail{
+    width:100%;
+    table-layout:fixed;
+    word-break:break-all;
+    border-collapse:collapse;
+}
+#SystemMail i{
+    padding-left:5px;
+    color: #85a5ff;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+.FlexDiv{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid #cccccc;
+}
+.TitleTimeDiv{
+    width:100%;
+}
+.TitleDiv{
+    font-size:20px;
+    font-weight:bold;
+    font-family:Microsoft JhengHei;
+    margin-left:2%;
+    width:98%;
+    padding:5px 0px 5px 0px;
+}
+.TimeDiv{
+    font-size:14px;
+    font-weight:bold;
+    font-family:Microsoft JhengHei;
+    width:98%;
+    margin-right:2%;
+    padding:5px 0px 5px 0px;
+}
+.TwoBtnTd{
+    background-color:#ebebeb;
+}
+.TwoBtnTd button{
+    width:100%;
+    color:#5c5c5c;
+    font-size:18px;
+    font-weight:bold;
+    padding:10px;
+    font-family:Microsoft JhengHei;
+    cursor:pointer;
+}
+.UnderLine{
+    border:0;
+    border-bottom:2px solid blue;
+    padding:0;
+    margin:0;
+    width:50%;
+}
